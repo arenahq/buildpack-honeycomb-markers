@@ -12,7 +12,7 @@ for key in HONEYCOMB_WRITE_KEY HEROKU_APP_NAME; do
 done
 
 # set marker
-echo "-----> Creating deploy Honeycomb Marker for ${SOURCE_VERSION}"
+echo "-----> Creating deploy Honeycomb Marker for ${HEROKU_RELEASE_VERSION}"
 curl https://api.honeycomb.io/1/markers/tracing \
   -X POST \
   -H "X-Honeycomb-Team: ${HONEYCOMB_WRITE_KEY}" \
