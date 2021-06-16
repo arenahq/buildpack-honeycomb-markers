@@ -13,7 +13,7 @@ done
 
 # set marker
 echo "-----> Creating deploy Honeycomb Marker for ${SOURCE_VERSION}"
-curl https://api.honeycomb.io/1/markers/nomics \
+curl https://api.honeycomb.io/1/markers/tracing \
   -X POST \
   -H "X-Honeycomb-Team: ${HONEYCOMB_WRITE_KEY}" \
   -d "{\"message\":\"${HEROKU_APP_NAME}:${SOURCE_VERSION}\", \"type\":\"deploy\"}" \
