@@ -6,7 +6,7 @@ set -e
 env_dir=$(cd "$3/" && pwd)
 
 # gather environment variables
-for key in HONEYCOMB_WRITE_KEY HEROKU_APP_NAME; do
+for key in HONEYCOMB_WRITE_KEY HEROKU_APP_NAME HEROKU_RELEASE_VERSION; do
   [[ -f "${env_dir}/${key}" ]] && export "$key=$(cat "${env_dir}/${key}")"
   [[ -z "${!key}" ]] && echo "-----> ${key} is missing or empty: unable to continue." && exit 1
 done
